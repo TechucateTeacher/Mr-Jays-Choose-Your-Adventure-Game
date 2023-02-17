@@ -4100,15 +4100,14 @@ h1 {
 .story-opening{
    display:none;
 }
-*/
 
-/* 
+
 .open-buttons{
    display:none;
 }
 */
 
- /*
+
 .open-one-screen{
    display:none;
 }
@@ -4144,6 +4143,13 @@ h1 {
 
 
 
+.story-end {
+	display: none;
+}
+
+.end-buttons {
+	display: none;
+}
 
 .option-one-end{
    display:none;
@@ -4154,7 +4160,7 @@ h1 {
 .option-two-end{
    display:none;
 }
-*/</style></head>
+</style></head>
     <body>
 
         <!--Between lines 8-12, put the opening of your story-->
@@ -4214,15 +4220,25 @@ h1 {
 
 
         <div class="middle-two-screen">
-            <h1>You cave and allow your head to rest for a second and accidentally fall asleep. The teacher tries to wake you up for 5 minutes before finally, you wake up. The teacher asks you to answer a question, but you fail to give an answer. You and a few others have been sent to the Principal's Office.<br>Game Over.</h1>
+            <h1>You cave and allow your head to rest for a second and accidentally fall asleep. The teacher tries to wake you up for 5 minutes before finally, you wake up. The teacher asks you to answer a question, but you fail to give an answer. You and a few others have been sent to the Principal's Office.</h1>
             <img src="https://www.rubiconline.com/wp-content/uploads/2019/10/Tana-Cartoon.png">
         </div>
 
+        <div class="story-end">
+            <h1>You feel yourself drifting into sleep, but right before you can close your eyes, the bell rings and everyone races out of class. You follow them out into the hall heading for the entrance. </h1>
+            <img src="https://video-images.vice.com/articles/590a1d444bdc0a28e88175be/lede/1493835989927-Screen-Shot-2017-05-03-at-21219-PM.png?crop=1xw:0.996309963099631xh;center,center">
+        </div>
+
+        <div class="end-buttons">
+            <button class="option-one">Continue</button>
+            
+        </div>
+        
 
         <div class="option-one-end">
             <h1>Class is finally over. You get your freedom once you walk through those doors. You did it. The sun looks bright through the door windows, the hall is filled with noise of closing lockers and scattered footsteps. Why do I hear an alarm clock ringing... 
 </h1>
-            <img src="https://i.pinimg.com/originals/b6/26/0a/b6260a38375f2a0152c85aba87f2d6f9.jpg">
+            <img src="https://c8.alamy.com/comp/2CBB2J5/vector-cartoon-stick-figure-drawing-conceptual-illustration-of-man-wake-up-to-early-by-another-man-with-alarm-clock-2CBB2J5.jpg">
         </div>
 
 
@@ -4241,12 +4257,14 @@ var storyOpen = document.querySelector(".story-opening");
 var openButtons = document.querySelector(".open-buttons");
 var openScreenOne = document.querySelector(".open-one-screen");
 var openScreenTwo = document.querySelector(".open-two-screen");
-var storyMiddle = document.querySelector("story-middle");
-var middleButtons = document.querySelector("middle-buttons");
-var middleScreenOne = document.querySelector("middle-one-screen");
-var middleScreenTwo = document.querySelector("middle-two-screen");
-var endingOne = document.querySelector("option-one-end");
-var endingTwo = document.querySelector("option-two-end");
+var storyMiddle = document.querySelector(".story-middle");
+var middleButtons = document.querySelector(".middle-buttons");
+var middleScreenOne = document.querySelector(".middle-one-screen");
+var middleScreenTwo = document.querySelector(".middle-two-screen");
+var storyEnd = document.querySelector(".story-end");
+var endButtons = document.querySelector(".end-buttons");
+var endingOne = document.querySelector(".option-one-end");
+var endingTwo = document.querySelector(".option-two-end");
 /* When you're ready to make event handlers, uncomment the code below. Then fill in the blanks with the correct variables!
 INSERT_VARIABLE.onclick=function(){
 
@@ -4262,4 +4280,4 @@ INSERT_VARIABLE.onclick=function(){
 };
 
 */
-//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInBvcGNvZGVQcmV2aWV3LmpzIl0sIm5hbWVzIjpbInN0b3J5T3BlbiIsImRvY3VtZW50IiwicXVlcnlTZWxlY3RvciIsIm9wZW5CdXR0b25zIiwib3BlblNjcmVlbk9uZSIsIm9wZW5TY3JlZW5Ud28iLCJzdG9yeU1pZGRsZSIsIm1pZGRsZUJ1dHRvbnMiLCJtaWRkbGVTY3JlZW5PbmUiLCJtaWRkbGVTY3JlZW5Ud28iLCJlbmRpbmdPbmUiLCJlbmRpbmdUd28iXSwibWFwcGluZ3MiOiJBQUFBO0FBQ0EsSUFBSUEsU0FBUyxHQUFHQyxRQUFRLENBQUNDLGFBQVQsQ0FBdUIsZ0JBQXZCLENBQWhCO0FBQ0EsSUFBSUMsV0FBVyxHQUFHRixRQUFRLENBQUNDLGFBQVQsQ0FBdUIsZUFBdkIsQ0FBbEI7QUFDQSxJQUFJRSxhQUFhLEdBQUdILFFBQVEsQ0FBQ0MsYUFBVCxDQUF1QixrQkFBdkIsQ0FBcEI7QUFDQSxJQUFJRyxhQUFhLEdBQUdKLFFBQVEsQ0FBQ0MsYUFBVCxDQUF1QixrQkFBdkIsQ0FBcEI7QUFDQSxJQUFJSSxXQUFXLEdBQUdMLFFBQVEsQ0FBQ0MsYUFBVCxDQUF1QixjQUF2QixDQUFsQjtBQUNBLElBQUlLLGFBQWEsR0FBR04sUUFBUSxDQUFDQyxhQUFULENBQXVCLGdCQUF2QixDQUFwQjtBQUNBLElBQUlNLGVBQWUsR0FBR1AsUUFBUSxDQUFDQyxhQUFULENBQXVCLG1CQUF2QixDQUF0QjtBQUNBLElBQUlPLGVBQWUsR0FBR1IsUUFBUSxDQUFDQyxhQUFULENBQXVCLG1CQUF2QixDQUF0QjtBQUNBLElBQUlRLFNBQVMsR0FBR1QsUUFBUSxDQUFDQyxhQUFULENBQXVCLGdCQUF2QixDQUFoQjtBQUNBLElBQUlTLFNBQVMsR0FBR1YsUUFBUSxDQUFDQyxhQUFULENBQXVCLGdCQUF2QixDQUFoQjtBQUlBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQSIsInNvdXJjZXNDb250ZW50IjpbIi8qIERlY2xhcmUgdmFyaWFibGVzIGJlbG93IHRvIHNhdmUgdGhlIGRpZmZlcmVudCBzZWN0aW9ucyAoZGl2cykgb2YgeW91ciBzdG9yeSovXG5sZXQgc3RvcnlPcGVuID0gZG9jdW1lbnQucXVlcnlTZWxlY3RvcihcIi5zdG9yeS1vcGVuaW5nXCIpO1xubGV0IG9wZW5CdXR0b25zID0gZG9jdW1lbnQucXVlcnlTZWxlY3RvcihcIi5vcGVuLWJ1dHRvbnNcIik7XG5sZXQgb3BlblNjcmVlbk9uZSA9IGRvY3VtZW50LnF1ZXJ5U2VsZWN0b3IoXCIub3Blbi1vbmUtc2NyZWVuXCIpO1xubGV0IG9wZW5TY3JlZW5Ud28gPSBkb2N1bWVudC5xdWVyeVNlbGVjdG9yKFwiLm9wZW4tdHdvLXNjcmVlblwiKTtcbmxldCBzdG9yeU1pZGRsZSA9IGRvY3VtZW50LnF1ZXJ5U2VsZWN0b3IoXCJzdG9yeS1taWRkbGVcIik7XG5sZXQgbWlkZGxlQnV0dG9ucyA9IGRvY3VtZW50LnF1ZXJ5U2VsZWN0b3IoXCJtaWRkbGUtYnV0dG9uc1wiKTtcbmxldCBtaWRkbGVTY3JlZW5PbmUgPSBkb2N1bWVudC5xdWVyeVNlbGVjdG9yKFwibWlkZGxlLW9uZS1zY3JlZW5cIik7XG5sZXQgbWlkZGxlU2NyZWVuVHdvID0gZG9jdW1lbnQucXVlcnlTZWxlY3RvcihcIm1pZGRsZS10d28tc2NyZWVuXCIpO1xubGV0IGVuZGluZ09uZSA9IGRvY3VtZW50LnF1ZXJ5U2VsZWN0b3IoXCJvcHRpb24tb25lLWVuZFwiKTtcbmxldCBlbmRpbmdUd28gPSBkb2N1bWVudC5xdWVyeVNlbGVjdG9yKFwib3B0aW9uLXR3by1lbmRcIik7XG5cblxuXG4vKiBXaGVuIHlvdSdyZSByZWFkeSB0byBtYWtlIGV2ZW50IGhhbmRsZXJzLCB1bmNvbW1lbnQgdGhlIGNvZGUgYmVsb3cuIFRoZW4gZmlsbCBpbiB0aGUgYmxhbmtzIHdpdGggdGhlIGNvcnJlY3QgdmFyaWFibGVzIVxuSU5TRVJUX1ZBUklBQkxFLm9uY2xpY2s9ZnVuY3Rpb24oKXtcblxufTtcblxuSU5TRVJUX1ZBUklBQkxFLm9uY2xpY2s9ZnVuY3Rpb24oKXtcblxufTtcblxuXG5JTlNFUlRfVkFSSUFCTEUub25jbGljaz1mdW5jdGlvbigpe1xuXG59O1xuXG4qLyJdfQ==</script></body></html>
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInBvcGNvZGVQcmV2aWV3LmpzIl0sIm5hbWVzIjpbInN0b3J5T3BlbiIsImRvY3VtZW50IiwicXVlcnlTZWxlY3RvciIsIm9wZW5CdXR0b25zIiwib3BlblNjcmVlbk9uZSIsIm9wZW5TY3JlZW5Ud28iLCJzdG9yeU1pZGRsZSIsIm1pZGRsZUJ1dHRvbnMiLCJtaWRkbGVTY3JlZW5PbmUiLCJtaWRkbGVTY3JlZW5Ud28iLCJzdG9yeUVuZCIsImVuZEJ1dHRvbnMiLCJlbmRpbmdPbmUiLCJlbmRpbmdUd28iXSwibWFwcGluZ3MiOiJBQUFBO0FBQ0EsSUFBSUEsU0FBUyxHQUFHQyxRQUFRLENBQUNDLGFBQVQsQ0FBdUIsZ0JBQXZCLENBQWhCO0FBQ0EsSUFBSUMsV0FBVyxHQUFHRixRQUFRLENBQUNDLGFBQVQsQ0FBdUIsZUFBdkIsQ0FBbEI7QUFDQSxJQUFJRSxhQUFhLEdBQUdILFFBQVEsQ0FBQ0MsYUFBVCxDQUF1QixrQkFBdkIsQ0FBcEI7QUFDQSxJQUFJRyxhQUFhLEdBQUdKLFFBQVEsQ0FBQ0MsYUFBVCxDQUF1QixrQkFBdkIsQ0FBcEI7QUFDQSxJQUFJSSxXQUFXLEdBQUdMLFFBQVEsQ0FBQ0MsYUFBVCxDQUF1QixlQUF2QixDQUFsQjtBQUNBLElBQUlLLGFBQWEsR0FBR04sUUFBUSxDQUFDQyxhQUFULENBQXVCLGlCQUF2QixDQUFwQjtBQUNBLElBQUlNLGVBQWUsR0FBR1AsUUFBUSxDQUFDQyxhQUFULENBQXVCLG9CQUF2QixDQUF0QjtBQUNBLElBQUlPLGVBQWUsR0FBR1IsUUFBUSxDQUFDQyxhQUFULENBQXVCLG9CQUF2QixDQUF0QjtBQUNBLElBQUlRLFFBQVEsR0FBR1QsUUFBUSxDQUFDQyxhQUFULENBQXVCLFlBQXZCLENBQWY7QUFDQSxJQUFJUyxVQUFVLEdBQUdWLFFBQVEsQ0FBQ0MsYUFBVCxDQUF1QixjQUF2QixDQUFqQjtBQUNBLElBQUlVLFNBQVMsR0FBR1gsUUFBUSxDQUFDQyxhQUFULENBQXVCLGlCQUF2QixDQUFoQjtBQUNBLElBQUlXLFNBQVMsR0FBR1osUUFBUSxDQUFDQyxhQUFULENBQXVCLGlCQUF2QixDQUFoQjtBQUlBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQSIsInNvdXJjZXNDb250ZW50IjpbIi8qIERlY2xhcmUgdmFyaWFibGVzIGJlbG93IHRvIHNhdmUgdGhlIGRpZmZlcmVudCBzZWN0aW9ucyAoZGl2cykgb2YgeW91ciBzdG9yeSovXG5sZXQgc3RvcnlPcGVuID0gZG9jdW1lbnQucXVlcnlTZWxlY3RvcihcIi5zdG9yeS1vcGVuaW5nXCIpO1xubGV0IG9wZW5CdXR0b25zID0gZG9jdW1lbnQucXVlcnlTZWxlY3RvcihcIi5vcGVuLWJ1dHRvbnNcIik7XG5sZXQgb3BlblNjcmVlbk9uZSA9IGRvY3VtZW50LnF1ZXJ5U2VsZWN0b3IoXCIub3Blbi1vbmUtc2NyZWVuXCIpO1xubGV0IG9wZW5TY3JlZW5Ud28gPSBkb2N1bWVudC5xdWVyeVNlbGVjdG9yKFwiLm9wZW4tdHdvLXNjcmVlblwiKTtcbmxldCBzdG9yeU1pZGRsZSA9IGRvY3VtZW50LnF1ZXJ5U2VsZWN0b3IoXCIuc3RvcnktbWlkZGxlXCIpO1xubGV0IG1pZGRsZUJ1dHRvbnMgPSBkb2N1bWVudC5xdWVyeVNlbGVjdG9yKFwiLm1pZGRsZS1idXR0b25zXCIpO1xubGV0IG1pZGRsZVNjcmVlbk9uZSA9IGRvY3VtZW50LnF1ZXJ5U2VsZWN0b3IoXCIubWlkZGxlLW9uZS1zY3JlZW5cIik7XG5sZXQgbWlkZGxlU2NyZWVuVHdvID0gZG9jdW1lbnQucXVlcnlTZWxlY3RvcihcIi5taWRkbGUtdHdvLXNjcmVlblwiKTtcbmxldCBzdG9yeUVuZCA9IGRvY3VtZW50LnF1ZXJ5U2VsZWN0b3IoXCIuc3RvcnktZW5kXCIpO1xubGV0IGVuZEJ1dHRvbnMgPSBkb2N1bWVudC5xdWVyeVNlbGVjdG9yKFwiLmVuZC1idXR0b25zXCIpO1xubGV0IGVuZGluZ09uZSA9IGRvY3VtZW50LnF1ZXJ5U2VsZWN0b3IoXCIub3B0aW9uLW9uZS1lbmRcIik7XG5sZXQgZW5kaW5nVHdvID0gZG9jdW1lbnQucXVlcnlTZWxlY3RvcihcIi5vcHRpb24tdHdvLWVuZFwiKTtcblxuXG5cbi8qIFdoZW4geW91J3JlIHJlYWR5IHRvIG1ha2UgZXZlbnQgaGFuZGxlcnMsIHVuY29tbWVudCB0aGUgY29kZSBiZWxvdy4gVGhlbiBmaWxsIGluIHRoZSBibGFua3Mgd2l0aCB0aGUgY29ycmVjdCB2YXJpYWJsZXMhXG5JTlNFUlRfVkFSSUFCTEUub25jbGljaz1mdW5jdGlvbigpe1xuXG59O1xuXG5JTlNFUlRfVkFSSUFCTEUub25jbGljaz1mdW5jdGlvbigpe1xuXG59O1xuXG5cbklOU0VSVF9WQVJJQUJMRS5vbmNsaWNrPWZ1bmN0aW9uKCl7XG5cbn07XG5cbiovIl19</script></body></html>
